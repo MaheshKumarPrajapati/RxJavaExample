@@ -2,6 +2,8 @@
 
 ## RxJava RxAndroid Operators
 
+We are covering following operators in this example
+
 1. Just Operator
 2. FromArray Operator
 3. FromIterator Operator
