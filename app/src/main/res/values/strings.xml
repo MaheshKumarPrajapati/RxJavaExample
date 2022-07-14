@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RxJavaExamples</string>
+
+    <string name="bt_operators">Operators</string>
+    <string name="bt_observar_obserable">Observar and Obserable</string>
+    <string name="bt_disponsable">Disposables</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="main_menu">Main Menu</string>
+    <string name="operator">Select Operator</string>
+
+    <string name="just_operator">Just Operator</string>
+    <string name="from_operator">From Operator</string>
+
+    <array name="operators_name">
+    <item>@string/just_operator</item>
+    <item>@string/from_operator</item>
+    </array>
+
+</resources>
