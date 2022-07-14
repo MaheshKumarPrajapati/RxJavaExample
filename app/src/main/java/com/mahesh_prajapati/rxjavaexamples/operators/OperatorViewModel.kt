@@ -8,12 +8,9 @@ import androidx.lifecycle.MutableLiveData
 
 
 class OperatorViewModel : ViewModel() {
-    var mainRepository = OperatorReposetory()
+
     var operatorsLiveData: MutableLiveData<ArrayList<String>>? = null
 
-    init{
-        operatorsLiveData!!.value = mainRepository.getData()  //fetching local data
-
-    }
+  
 
 }
