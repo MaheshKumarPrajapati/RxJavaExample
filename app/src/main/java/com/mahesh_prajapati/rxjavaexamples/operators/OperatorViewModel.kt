@@ -11,6 +11,8 @@ class OperatorViewModel : ViewModel() {
 
     var operatorsLiveData: MutableLiveData<ArrayList<String>>? = null
 
-  
+    fun justOperator(){
+
+    }
 
 }

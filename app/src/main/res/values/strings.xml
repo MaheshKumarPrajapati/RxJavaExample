@@ -9,11 +9,35 @@
     <string name="operator">Select Operator</string>
 
     <string name="just_operator">Just Operator</string>
-    <string name="from_operator">From Operator</string>
+    <string name="from_array_operator">FromArray Operator</string>
+    <string name="from_iterator_operator">FromIterator Operator</string>
+    <string name="range_operator">Range Operator</string>
+    <string name="repeat_operator">Repeat Operator</string>
+    <string name="interval_operator">Interval Operator</string>
+    <string name="timer_operator">Timer Operator</string>
+    <string name="create_operator">Create Operator</string>
+    <string name="filter_operator">Filter Operator</string>
+    <string name="last_operator">Last Operator</string>
+    <string name="distinct_operator">Distinct Operator</string>
+    <string name="skip_operator">Skip Operator</string>
+    <string name="buffer_operator">Buffer Operator</string>
+    <string name="map_operator">Map Operator</string>
 
     <array name="operators_name">
     <item>@string/just_operator</item>
-    <item>@string/from_operator</item>
+    <item>@string/from_array_operator</item>
+    <item>@string/from_iterator_operator</item>
+    <item>@string/range_operator</item>
+    <item>@string/repeat_operator</item>
+    <item>@string/interval_operator</item>
+    <item>@string/timer_operator</item>
+    <item>@string/create_operator</item>
+    <item>@string/filter_operator</item>
+    <item>@string/last_operator</item>
+    <item>@string/distinct_operator</item>
+    <item>@string/skip_operator</item>
+    <item>@string/buffer_operator</item>
+    <item>@string/map_operator</item>
     </array>
 
 </resources>

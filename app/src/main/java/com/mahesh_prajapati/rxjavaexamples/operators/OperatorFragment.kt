@@ -1,15 +1,18 @@
 package com.mahesh_prajapati.rxjavaexamples.operators
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.mahesh_prajapati.rxjavaexamples.R
-import com.mahesh_prajapati.rxjavaexamples.databinding.FragmentMainBinding
 import com.mahesh_prajapati.rxjavaexamples.databinding.FragmentOperatorBinding
+import androidx.recyclerview.widget.GridLayoutManager
+
+
+
 
 class OperatorFragment : Fragment() {
 
@@ -23,9 +26,12 @@ class OperatorFragment : Fragment() {
     ): View? {
         binding = FragmentOperatorBinding.inflate(layoutInflater)
         val view = binding.root
-        val adapter = OperatorsAdaptors()
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(activity, 2)
+
+        // pass it to rvLists layoutManager
+        binding.rvOperators.setLayoutManager(layoutManager)
+        val adapter = OperatorsAdaptors(getAllNames())
         binding.rvOperators.adapter=adapter
-        adapter.setOperatorNameList(getAllNames())
         return view
     }
 
