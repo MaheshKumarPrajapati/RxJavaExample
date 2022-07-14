@@ -1,6 +1,6 @@
 # RxJavaExample
 
-##RxJava RxAndroid Operators
+## RxJava RxAndroid Operators
 
 1. Just Operator
 2. FromArray Operator
