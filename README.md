@@ -1,6 +1,6 @@
 # RxJavaExample
 
-## RxJava RxAndroid Operators
+### Operators
 
 We are covering following operators in this example
 
