@@ -11,10 +11,6 @@ import com.mahesh_prajapati.rxjavaexamples.databinding.FragmentMainBinding
 class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +20,14 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
         val view = binding.root
 
+        binding.btSimpleExample.setOnClickListener {
+            findNavController().navigate(R.id.go_main_fragment_to_simple_example_fragment)
+        }
+        binding.btLemdaExample.setOnClickListener {
+            findNavController().navigate(R.id.go_main_fragment_to_lemda_function_fragment)
+        }
         binding.btOperators.setOnClickListener {
-            findNavController().navigate(R.id.go_main_fragment_to_operator)
+            findNavController().navigate(R.id.go_main_fragment_to_operator_fragment)
         }
 
         return view

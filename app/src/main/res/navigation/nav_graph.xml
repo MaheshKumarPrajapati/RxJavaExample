@@ -11,8 +11,28 @@
         android:label="@string/main_menu"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/go_main_fragment_to_operator"
+            android:id="@+id/go_main_fragment_to_simple_example_fragment"
+            app:destination="@id/simple_example_fragment" />
+        <action
+            android:id="@+id/go_main_fragment_to_lemda_function_fragment"
+            app:destination="@id/lemda_function_fragment" />
+         <action
+            android:id="@+id/go_main_fragment_to_operator_fragment"
             app:destination="@id/operators_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/simple_example_fragment"
+        android:name="com.mahesh_prajapati.rxjavaexamples.SimpleExampleFragment"
+        android:label="@string/simple_example"
+        tools:layout="@layout/fragment_simple_example">
+
+    </fragment>
+    <fragment
+        android:id="@+id/lemda_function_fragment"
+        android:name="com.mahesh_prajapati.rxjavaexamples.LemdaFunctionFragment"
+        android:label="@string/lemda_function"
+        tools:layout="@layout/fragment_lemda_function">
 
     </fragment>
     <fragment
@@ -20,6 +40,16 @@
         android:name="com.mahesh_prajapati.rxjavaexamples.operators.OperatorFragment"
         android:label="@string/operator"
         tools:layout="@layout/fragment_operator">
+        <action
+            android:id="@+id/go_main_fragment_to_output_fragment"
+            app:destination="@id/output_fragment" />
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/output_fragment"
+        android:name="com.mahesh_prajapati.rxjavaexamples.OutputFragment"
+        android:label="@string/output"
+        tools:layout="@layout/fragment_output">
     </fragment>
 </navigation>

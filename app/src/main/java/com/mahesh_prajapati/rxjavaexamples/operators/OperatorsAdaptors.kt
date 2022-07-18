@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mahesh_prajapati.rxjavaexamples.databinding.AdaptorOperatorBinding
+import com.mahesh_prajapati.rxjavaexamples.utils.CellClickListener
 
-class OperatorsAdaptors(val names: List<String>) : RecyclerView.Adapter<OperatorsAdaptors.ViewHolder>() {
+class OperatorsAdaptors(val names: List<String>,val cellClickListener: CellClickListener) : RecyclerView.Adapter<OperatorsAdaptors.ViewHolder>() {
 
     // create an inner class with name ViewHolder
     // It takes a view argument, in which pass the generated class of single_item.xml
@@ -32,6 +33,7 @@ class OperatorsAdaptors(val names: List<String>) : RecyclerView.Adapter<Operator
                 binding.operatorName.text = this
             }
         }
+        holder.binding.operatorName.setOnClickListener { cellClickListener.onCellClickListener(position) }
     }
 
     // return the size of languageList

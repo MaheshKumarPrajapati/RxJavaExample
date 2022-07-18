@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">RxJavaExamples</string>
 
+    <string name="bt_simple_Example">Simple Example</string>
+    <string name="bt_lemda_Example">Example Using lemda function</string>
     <string name="bt_operators">Operators</string>
     <string name="bt_observar_obserable">Observar and Obserable</string>
     <string name="bt_disponsable">Disposables</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="main_menu">Main Menu</string>
+    <string name="simple_example">@string/bt_simple_Example</string>
+    <string name="lemda_function">@string/bt_lemda_Example</string>
+    <string name="output">Result</string>
     <string name="operator">Select Operator</string>
 
     <string name="just_operator">Just Operator</string>
@@ -24,20 +29,22 @@
     <string name="map_operator">Map Operator</string>
 
     <array name="operators_name">
-    <item>@string/just_operator</item>
-    <item>@string/from_array_operator</item>
-    <item>@string/from_iterator_operator</item>
-    <item>@string/range_operator</item>
-    <item>@string/repeat_operator</item>
-    <item>@string/interval_operator</item>
-    <item>@string/timer_operator</item>
-    <item>@string/create_operator</item>
-    <item>@string/filter_operator</item>
-    <item>@string/last_operator</item>
-    <item>@string/distinct_operator</item>
-    <item>@string/skip_operator</item>
-    <item>@string/buffer_operator</item>
-    <item>@string/map_operator</item>
+        <item>@string/just_operator</item>
+        <item>@string/from_array_operator</item>
+        <item>@string/from_iterator_operator</item>
+        <item>@string/range_operator</item>
+        <item>@string/repeat_operator</item>
+        <item>@string/interval_operator</item>
+        <item>@string/timer_operator</item>
+        <item>@string/create_operator</item>
+        <item>@string/filter_operator</item>
+        <item>@string/last_operator</item>
+        <item>@string/distinct_operator</item>
+        <item>@string/skip_operator</item>
+        <item>@string/buffer_operator</item>
+        <item>@string/map_operator</item>
     </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -7,16 +7,39 @@
     tools:ignore="UsingOnClickInXml"
     tools:context=".MainFragment">
 
+    <Button
+        android:id="@+id/bt_simple_Example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/bt_simple_Example"
+        android:text="@string/bt_simple_Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="@string/bt_simple_Example" />
+
+    <Button
+        android:id="@+id/bt_lemda_Example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/bt_lemda_Example"
+        android:text="@string/bt_lemda_Example"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_simple_Example"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="@string/bt_lemda_Example" />
 
     <Button
         android:id="@+id/bt_operators"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:contentDescription="@string/bt_operators"
         android:text="@string/bt_operators"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_lemda_Example"
         app:layout_constraintRight_toRightOf="parent"
         tools:text="@string/bt_operators" />
 
