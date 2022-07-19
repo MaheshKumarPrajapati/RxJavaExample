@@ -30,8 +30,9 @@ We are covering following operators in this example
 * Just operator creates new Observables by converting an object or a set of objects into an Observable and emits that or those objects.
 * You can pass up to a maximum of 10 objects.
 
+<img src="https://reactivex.io/documentation/operators/images/just.c.png" style="background-color:white;padding:20px;"/>
 
-<img src="https://reactivex.io/documentation/operators/images/just.c.png"/>
+Example:
 
 ```kotlin
  Observable
@@ -49,14 +50,14 @@ We are covering following operators in this example
   ``` 
  output : 
 
-just Operator onNext : 1
-just Operator onNext : 2
-just Operator onNext : 3
-just Operator onNext : 4
-just Operator onNext : 5
-just Operator onNext : 6
-just Operator onNext : 7
-just Operator onNext : 8
-just Operator onNext : 9
-just Operator onNext : 10
-just Operator onComplete 
+just Operator onNext : 1</br>
+just Operator onNext : 2</br>
+just Operator onNext : 3</br>
+just Operator onNext : 4</br>
+just Operator onNext : 5</br>
+just Operator onNext : 6</br>
+just Operator onNext : 7</br>
+just Operator onNext : 8</br>
+just Operator onNext : 9</br>
+just Operator onNext : 10</br>
+just Operator onComplete</br>
