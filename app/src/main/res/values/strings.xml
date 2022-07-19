@@ -27,6 +27,12 @@
     <string name="skip_operator">Skip Operator</string>
     <string name="buffer_operator">Buffer Operator</string>
     <string name="map_operator">Map Operator</string>
+    <string name="flatmap_operator">FlatMap Operator</string>
+    <string name="groupBy_operator">GroupBy Operator</string>
+    <string name="merge_operator">Merge Operator</string>
+    <string name="concat_operator">Concat Operator</string>
+    <string name="start_with_operator">StartWith Operator</string>
+    <string name="zip_operator">Zip Operator</string>
 
     <array name="operators_name">
         <item>@string/just_operator</item>
@@ -43,6 +49,12 @@
         <item>@string/skip_operator</item>
         <item>@string/buffer_operator</item>
         <item>@string/map_operator</item>
+        <item>@string/flatmap_operator</item>
+        <item>@string/groupBy_operator</item>
+        <item>@string/merge_operator</item>
+        <item>@string/concat_operator</item>
+        <item>@string/start_with_operator</item>
+        <item>@string/zip_operator</item>
     </array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,6 +1,7 @@
 package com.mahesh_prajapati.rxjavaexamples.operators
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +12,9 @@ import com.mahesh_prajapati.rxjavaexamples.R
 import com.mahesh_prajapati.rxjavaexamples.databinding.FragmentOperatorBinding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mahesh_prajapati.rxjavaexamples.utils.CellClickListener
-
-import com.mahesh_prajapati.rxjavaexamples.OutputFragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 
-
+private const val LOG_TAG = "OperatorFragment"
 class OperatorFragment : Fragment(),CellClickListener {
 
     private lateinit var binding: FragmentOperatorBinding
@@ -26,7 +24,7 @@ class OperatorFragment : Fragment(),CellClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOperatorBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -37,37 +35,12 @@ class OperatorFragment : Fragment(),CellClickListener {
         val adapter = OperatorsAdaptors(getAllNames(), this)
         binding.rvOperators.adapter = adapter
 
-        viewModel.justOperatorObserver.observe(requireActivity(), Observer {
-            if(it.isNotBlank()) {
+        viewModel.operatorObserver.observe(requireActivity(), Observer {
+              Log.d(LOG_TAG,it)
+        /* if(it.isNotBlank()) {
                 val bundle = OutputFragment.createBundle(it)
                 findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)
-            }
-        })
-
-        viewModel.fromArrayOperatorObserver.observe(requireActivity(), Observer {
-            if(it.isNotBlank()) {
-                val bundle = OutputFragment.createBundle(it)
-                findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)
-            }
-        })
-
-        viewModel.fromIterableOperatorObserver.observe(requireActivity(), Observer {
-            if(it.isNotBlank()) {
-                val bundle = OutputFragment.createBundle(it)
-                findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)
-            }
-        })
-        viewModel.rangeOperatorObserver.observe(requireActivity(), Observer {
-            if(it.isNotBlank()) {
-                val bundle = OutputFragment.createBundle(it)
-                findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)
-            }
-        })
-        viewModel.repeatOperatorObserver.observe(requireActivity(), Observer {
-            if(it.isNotBlank()) {
-                val bundle = OutputFragment.createBundle(it)
-                findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)
-            }
+            }*/
         })
 
         return view
@@ -93,7 +66,51 @@ class OperatorFragment : Fragment(),CellClickListener {
         4 -> {
             viewModel.repeatOperator()
         }
-
+        5 -> {
+            viewModel.intervalOperator()
+        }
+        6 -> {
+            viewModel.timerOperator()
+        }
+        7 -> {
+            viewModel.createOperator()
+        }
+        8-> {
+            viewModel.filterOperator()
+        }
+        9-> {
+            viewModel.lastOperator()
+        }
+        10 -> {
+            viewModel.distinctOperator()
+        }
+        11 -> {
+            viewModel.skipOperator()
+        }
+        12-> {
+            viewModel.bufferOperator()
+        }
+        13 -> {
+            viewModel.mapOperator()
+        }
+        14 -> {
+            viewModel.flatMapOperator()
+        }
+        15 -> {
+            viewModel.groupByOperator()
+        }
+        16 -> {
+                viewModel.mergeOperator()
+            }
+        17-> {
+                viewModel.concatOperator()
+            }
+        18 -> {
+                viewModel.startWithOperator()
+            }
+        19 -> {
+                viewModel.zipOperator()
+            }
         }
     }
 
