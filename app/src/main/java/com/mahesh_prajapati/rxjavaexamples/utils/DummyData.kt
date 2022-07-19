@@ -44,4 +44,15 @@ class DummyData {
         UserProfile(9,"Vivek",36,"https//example/rxjava/image9"),
         UserProfile(10,"Seema",31,"https//example/rxjava/image10"),
         UserProfile(11,"Sweta",25,"https//example/rxjava/image11"))
+
+    val blogList = mutableListOf<Blog>(
+        Blog(1,1,"Title 1","Content 1"),
+        Blog(2,2,"Title 2","Content 2"),
+        Blog(3,1,"Title 3","Content 3"),
+        Blog(4,4,"Title 4","Content 4"),
+        Blog(5,4,"Title 5","Content 5"),
+        Blog(6,6,"Title 6","Content 6"),
+        Blog(7,2,"Title 7","Content 7")
+        )
+
 }

@@ -2,9 +2,7 @@ package com.mahesh_prajapati.rxjavaexamples.operators
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.MutableLiveData
-import com.mahesh_prajapati.rxjavaexamples.utils.DummyData
-import com.mahesh_prajapati.rxjavaexamples.utils.User
-import com.mahesh_prajapati.rxjavaexamples.utils.UserProfile
+import com.mahesh_prajapati.rxjavaexamples.utils.*
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import java.util.concurrent.TimeUnit
@@ -286,23 +284,110 @@ class OperatorViewModel : ViewModel() {
     }
 
     fun mergeOperator(){
+        Observable
+            .merge(Observable.fromIterable(DummyData().userList),Observable.fromIterable(DummyData().userProfileList))
+            .subscribe(
+                {
+                    operatorObserver.value="merge Operator onNext : $it"
+                },
+                {
+                    operatorObserver.value="merge Operator onError ${it!!.message}"
+                },
+                {
+                    operatorObserver.value="merge Operator onComplete"
+                })
 
 
     }
 
     fun concatOperator(){
+        /*Observable
+            .concat(Observable.range(1,100),Observable.range(101,50))
+            .subscribe(
+                {
+                    operatorObserver.value="concat Operator onNext : $it"
+                },
+                {
+                    operatorObserver.value="concat Operator onError ${it!!.message}"
+                },
+                {
+                    operatorObserver.value="concat Operator onComplete"
+                })*/
 
+        // Another way (if we have only two Observable)
 
+       Observable.range(1,100).concatWith(Observable.range(101,50))
+        .subscribe({
+            operatorObserver.value="concat Operator onNext : $it"
+           },
+            {
+                operatorObserver.value="concat Operator onError ${it!!.message}"
+            },
+            {
+                operatorObserver.value="concat Operator onComplete"
+            })
     }
 
     fun startWithOperator(){
-
-
+        Observable.range(1,100).startWith(Observable.range(101,50))
+            .subscribe({
+                operatorObserver.value="startWith Operator onNext : $it"
+            },
+                {
+                    operatorObserver.value="startWith Operator onError ${it!!.message}"
+                },
+                {
+                    operatorObserver.value="startWith Operator onComplete"
+                })
     }
 
     fun zipOperator(){
+  /*    val num =Observable.just(1,2,3,4,5)
+      val char =Observable.just('A','B','C','D')
+        Observable
+            .zip(num,char,{t1,t2 -> "t1 t2"})
+            .subscribe(
+                {
+                    operatorObserver.value="zip Operator onNext : $it"
+                },
+                {
+                    operatorObserver.value="zip Operator onError ${it!!.message}"
+                },
+                {
+                    operatorObserver.value="zip Operator onComplete"
+                })
+    } */
+        val observable1= Observable.just(DummyData().userList)
+        val observable2= Observable.just(DummyData().blogList)
+        Observable
+            .zip(observable1,observable2,{t1,t2 ->
+              getBlogDetails(t1,t2)
+            })
+            .subscribe(
+                {
+                    it.forEach {
+                        operatorObserver.value="zip Operator onNext : $it"
+                    }
 
+                },
+                {
+                    operatorObserver.value="zip Operator onError ${it!!.message}"
+                },
+                {
+                    operatorObserver.value="zip Operator onComplete"
+                })
+    }
 
+    private fun getBlogDetails(t1: List<User>, t2: List<Blog>): List<BlogDetail> {
+        val lisBlogDetail : MutableList<BlogDetail> = emptyList<BlogDetail>().toMutableList()
+        t1.forEach { user->
+            t2.forEach { blog->
+                if(user.id == blog.userId) {
+                    lisBlogDetail.add(BlogDetail(blog.id,blog.userId,blog.title,blog.content,user))
+                }
+            }
+        }
+        return lisBlogDetail
     }
 
 }
