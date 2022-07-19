@@ -31,7 +31,7 @@ We are covering following operators in this example
 * You can pass up to a maximum of 10 objects.
 
 
-img src="https://reactivex.io/documentation/operators/images/just.c.png"
+<img src="https://reactivex.io/documentation/operators/images/just.c.png"/>
 
 ```kotlin
  Observable
