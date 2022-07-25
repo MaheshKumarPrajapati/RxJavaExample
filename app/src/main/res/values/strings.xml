@@ -12,6 +12,7 @@
     <string name="lemda_function">@string/bt_lemda_Example</string>
     <string name="output">Result</string>
     <string name="operator">Select Operator</string>
+    <string name="observer_obserable">Observer Obserable</string>
 
     <string name="just_operator">Just Operator</string>
     <string name="from_array_operator">FromArray Operator</string>
@@ -32,7 +33,8 @@
     <string name="merge_operator">Merge Operator</string>
     <string name="concat_operator">Concat Operator</string>
     <string name="start_with_operator">StartWith Operator</string>
-    <string name="zip_operator">Zip Operator</string>
+    <string name="zip_operator">Zip Operator</string>0
+
 
     <array name="operators_name">
         <item>@string/just_operator</item>
@@ -55,6 +57,20 @@
         <item>@string/concat_operator</item>
         <item>@string/start_with_operator</item>
         <item>@string/zip_operator</item>
+    </array>
+
+    <string name="obserable_observer">Obserable and Observer</string>
+    <string name="Single_singleObserver">Single and Single Observer</string>
+    <string name="maybe_maybeObserver">Maybe and Maybe Observer</string>
+    <string name="completable_completableObserver">Completable and Completable Observer</string>
+    <string name="flowable">Flowable</string>
+
+    <array name="obserber_obserable_name">
+        <item>@string/obserable_observer</item>
+        <item>@string/Single_singleObserver</item>
+        <item>@string/maybe_maybeObserver</item>
+        <item>@string/completable_completableObserver</item>
+        <item>@string/flowable</item>
     </array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

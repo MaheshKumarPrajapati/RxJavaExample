@@ -29,6 +29,9 @@ class MainFragment : Fragment() {
         binding.btOperators.setOnClickListener {
             findNavController().navigate(R.id.go_main_fragment_to_operator_fragment)
         }
+        binding.btObservarObserable.setOnClickListener {
+            findNavController().navigate(R.id.go_main_fragment_to_observer_obserable_fragment)
+        }
 
         return view
     }

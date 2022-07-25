@@ -19,6 +19,8 @@ class DummyData {
     User(10,"Seema",31),
     User(11,"Sweta",25))
 
+    val emptyUserList = mutableListOf<User>()
+
     val userListForGroupByOperator = mutableListOf<User>(
         User(1,"Sachin",32),
         User(2,"Ramesh",34),

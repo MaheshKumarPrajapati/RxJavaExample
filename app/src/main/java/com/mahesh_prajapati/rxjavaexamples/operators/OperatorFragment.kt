@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.mahesh_prajapati.rxjavaexamples.utils.CellClickListener
 import androidx.lifecycle.ViewModelProvider
 
-private const val LOG_TAG = "OperatorFragment"
 class OperatorFragment : Fragment(),CellClickListener {
 
     private lateinit var binding: FragmentOperatorBinding
@@ -35,8 +34,8 @@ class OperatorFragment : Fragment(),CellClickListener {
         val adapter = OperatorsAdaptors(getAllNames(), this)
         binding.rvOperators.adapter = adapter
 
-        viewModel.operatorObserver.observe(requireActivity(), Observer {
-              Log.d(LOG_TAG,it)
+        viewModel.operatorLiveData.observe(requireActivity(), Observer {
+            Log.d(getString(R.string.app_name),it)
         /* if(it.isNotBlank()) {
                 val bundle = OutputFragment.createBundle(it)
                 findNavController().navigate(R.id.go_main_fragment_to_output_fragment, bundle)

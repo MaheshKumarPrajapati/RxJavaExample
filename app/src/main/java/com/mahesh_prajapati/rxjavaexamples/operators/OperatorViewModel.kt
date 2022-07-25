@@ -9,22 +9,23 @@ import java.util.concurrent.TimeUnit
 
 class OperatorViewModel : ViewModel() {
 
-    var operatorObserver: MutableLiveData<String> =MutableLiveData<String>("")
+    var operatorLiveData: MutableLiveData<String> =MutableLiveData<String>("")
 
     var string:String=""
+
 
     fun justOperator(){
         Observable
         .just(1,2,3,4,5,6,7,8,9,10)
         .subscribe(
                 {
-                    operatorObserver.value="just Operator onNext : $it"
+                    operatorLiveData.value="just Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="just Operator onError ${it!!.message}"
+                    operatorLiveData.value="just Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="just Operator onComplete"
+                    operatorLiveData.value="just Operator onComplete"
                 })
     }
 
@@ -33,13 +34,13 @@ class OperatorViewModel : ViewModel() {
             .fromArray(DummyData().listNum)
             .subscribe(
                 {
-                    operatorObserver.value="fromArray Operator onNext : $it"
+                    operatorLiveData.value="fromArray Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="fromArray Operator onError ${it!!.message}"
+                    operatorLiveData.value="fromArray Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="fromArray Operator onComplete"
+                    operatorLiveData.value="fromArray Operator onComplete"
                 })
 
     }
@@ -49,13 +50,13 @@ class OperatorViewModel : ViewModel() {
             .fromIterable(DummyData().listNum)
             .subscribe(
                 {
-                    operatorObserver.value="fromIterable Operator onNext : $it"
+                    operatorLiveData.value="fromIterable Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="fromIterable Operator onError ${it!!.message}"
+                    operatorLiveData.value="fromIterable Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="fromIterable Operator onComplete"
+                    operatorLiveData.value="fromIterable Operator onComplete"
                 })
 
     }
@@ -65,13 +66,13 @@ class OperatorViewModel : ViewModel() {
             .range(1,20)
             .subscribe(
                 {
-                    operatorObserver.value="range Operator onNext : $it"
+                    operatorLiveData.value="range Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="range Operator onError ${it!!.message}"
+                    operatorLiveData.value="range Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="range Operator onComplete"
+                    operatorLiveData.value="range Operator onComplete"
                 })
 
     }
@@ -81,13 +82,13 @@ class OperatorViewModel : ViewModel() {
             .range(1,10).repeat(3)
             .subscribe(
                 {
-                    operatorObserver.value="repeat Operator onNext : $it"
+                    operatorLiveData.value="repeat Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="repeat Operator onError ${it!!.message}"
+                    operatorLiveData.value="repeat Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="repeat Operator onComplete"
+                    operatorLiveData.value="repeat Operator onComplete"
                 })
     }
 
@@ -97,13 +98,13 @@ class OperatorViewModel : ViewModel() {
             .interval(2,TimeUnit.SECONDS).takeWhile { value-> value<=10 }
             .subscribe(
                 {
-                    operatorObserver.postValue("interval Operator onNext : $it, ${DummyData().getLocation()}")
+                    operatorLiveData.postValue("interval Operator onNext : $it, ${DummyData().getLocation()}")
                 },
                 {
-                    operatorObserver.postValue("interval Operator onError ${it!!.message}")
+                    operatorLiveData.postValue("interval Operator onError ${it!!.message}")
                 },
                 {
-                    operatorObserver.postValue("interval Operator onComplete")
+                    operatorLiveData.postValue("interval Operator onComplete")
                 })
 
     }
@@ -113,13 +114,13 @@ class OperatorViewModel : ViewModel() {
             .timer(5,TimeUnit.SECONDS)
             .subscribe(
                 {
-                    operatorObserver.postValue("timer Operator onNext : $it, ${DummyData().getLocation()}")
+                    operatorLiveData.postValue("timer Operator onNext : $it, ${DummyData().getLocation()}")
                 },
                 {
-                    operatorObserver.postValue("timer Operator onError ${it!!.message}")
+                    operatorLiveData.postValue("timer Operator onError ${it!!.message}")
                 },
                 {
-                    operatorObserver.postValue("timer Operator onComplete")
+                    operatorLiveData.postValue("timer Operator onComplete")
                 })
 
     }
@@ -137,13 +138,13 @@ class OperatorViewModel : ViewModel() {
             })
             .subscribe(
                 {
-                    operatorObserver.value="create Operator onNext : $it"
+                    operatorLiveData.value="create Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="create Operator onError ${it!!.message}"
+                    operatorLiveData.value="create Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="create Operator onComplete"
+                    operatorLiveData.value="create Operator onComplete"
                 })
 
     }
@@ -154,13 +155,13 @@ class OperatorViewModel : ViewModel() {
             .filter { it.age>20 }
             .subscribe(
                 {
-                    operatorObserver.value="filter Operator Operator onNext : $it"
+                    operatorLiveData.value="filter Operator Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="filter Operator Operator onError ${it!!.message}"
+                    operatorLiveData.value="filter Operator Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="filter Operator onComplete"
+                    operatorLiveData.value="filter Operator onComplete"
                 })
 
     }
@@ -171,10 +172,10 @@ class OperatorViewModel : ViewModel() {
             .last(User(0,"Mahesh",32),)
             .subscribe(
                 {
-                    operatorObserver.value="last Operator onNext : $it"
+                    operatorLiveData.value="last Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="last Operator onError ${it!!.message}"
+                    operatorLiveData.value="last Operator onError ${it!!.message}"
                 })
     }
 
@@ -184,13 +185,13 @@ class OperatorViewModel : ViewModel() {
             .distinct{it.age}
             .subscribe(
                 {
-                    operatorObserver.value="distinct Operator onNext : $it"
+                    operatorLiveData.value="distinct Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="distinct Operator onError ${it!!.message}"
+                    operatorLiveData.value="distinct Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="distinct Operator onComplete"
+                    operatorLiveData.value="distinct Operator onComplete"
                 })
     }
 
@@ -201,13 +202,13 @@ class OperatorViewModel : ViewModel() {
             .skipLast(2)
             .subscribe(
                 {
-                    operatorObserver.value="skip Operator onNext : $it"
+                    operatorLiveData.value="skip Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="skip Operator onError ${it!!.message}"
+                    operatorLiveData.value="skip Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="skip Operator onComplete"
+                    operatorLiveData.value="skip Operator onComplete"
                 })
     }
 
@@ -217,13 +218,13 @@ class OperatorViewModel : ViewModel() {
             .buffer(2)
             .subscribe(
                 {
-                    operatorObserver.value="buffer Operator onNext : $it"
+                    operatorLiveData.value="buffer Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="buffer Operator onError ${it!!.message}"
+                    operatorLiveData.value="buffer Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="buffer Operator onComplete"
+                    operatorLiveData.value="buffer Operator onComplete"
                 })
     }
 
@@ -233,13 +234,13 @@ class OperatorViewModel : ViewModel() {
             .map { UserProfile(it.id,it.name,it.age,"www.image.com/${it.name}") }
             .subscribe(
                 {
-                    operatorObserver.value="map Operator onNext : $it"
+                    operatorLiveData.value="map Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="map Operator onError ${it!!.message}"
+                    operatorLiveData.value="map Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="map Operator onComplete"
+                    operatorLiveData.value="map Operator onComplete"
                 })
 
     }
@@ -250,13 +251,13 @@ class OperatorViewModel : ViewModel() {
             .flatMap { it1-> Observable.fromIterable(DummyData().userProfileList).filter { it2-> it2.id==it1.id} }
             .subscribe(
                 {
-                    operatorObserver.value="flatMap Operator onNext : $it"
+                    operatorLiveData.value="flatMap Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="flatMap Operator onError ${it!!.message}"
+                    operatorLiveData.value="flatMap Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="flatMap Operator onComplete"
+                    operatorLiveData.value="flatMap Operator onComplete"
                 })
     }
 
@@ -267,18 +268,18 @@ class OperatorViewModel : ViewModel() {
             .subscribe(
                 {group ->
                     group.subscribe({
-                        operatorObserver.value="groupBy Operator group onNext : key ${group.key} , value $it"
+                        operatorLiveData.value="groupBy Operator group onNext : key ${group.key} , value $it"
                     },{
-                        operatorObserver.value="groupBy Operator group onError ${it!!.message}"
+                        operatorLiveData.value="groupBy Operator group onError ${it!!.message}"
                       },
-                    {operatorObserver.value="groupBy Operator group onComplete"
+                    {operatorLiveData.value="groupBy Operator group onComplete"
                     })
                 },
                 {
-                    operatorObserver.value="groupBy Operator main onError ${it!!.message}"
+                    operatorLiveData.value="groupBy Operator main onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="groupBy Operator main onComplete"
+                    operatorLiveData.value="groupBy Operator main onComplete"
                 })
 
     }
@@ -288,13 +289,13 @@ class OperatorViewModel : ViewModel() {
             .merge(Observable.fromIterable(DummyData().userList),Observable.fromIterable(DummyData().userProfileList))
             .subscribe(
                 {
-                    operatorObserver.value="merge Operator onNext : $it"
+                    operatorLiveData.value="merge Operator onNext : $it"
                 },
                 {
-                    operatorObserver.value="merge Operator onError ${it!!.message}"
+                    operatorLiveData.value="merge Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="merge Operator onComplete"
+                    operatorLiveData.value="merge Operator onComplete"
                 })
 
 
@@ -318,26 +319,26 @@ class OperatorViewModel : ViewModel() {
 
        Observable.range(1,100).concatWith(Observable.range(101,50))
         .subscribe({
-            operatorObserver.value="concat Operator onNext : $it"
+            operatorLiveData.value="concat Operator onNext : $it"
            },
             {
-                operatorObserver.value="concat Operator onError ${it!!.message}"
+                operatorLiveData.value="concat Operator onError ${it!!.message}"
             },
             {
-                operatorObserver.value="concat Operator onComplete"
+                operatorLiveData.value="concat Operator onComplete"
             })
     }
 
     fun startWithOperator(){
         Observable.range(1,100).startWith(Observable.range(101,50))
             .subscribe({
-                operatorObserver.value="startWith Operator onNext : $it"
+                operatorLiveData.value="startWith Operator onNext : $it"
             },
                 {
-                    operatorObserver.value="startWith Operator onError ${it!!.message}"
+                    operatorLiveData.value="startWith Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="startWith Operator onComplete"
+                    operatorLiveData.value="startWith Operator onComplete"
                 })
     }
 
@@ -366,15 +367,15 @@ class OperatorViewModel : ViewModel() {
             .subscribe(
                 {
                     it.forEach {
-                        operatorObserver.value="zip Operator onNext : $it"
+                        operatorLiveData.value="zip Operator onNext : $it"
                     }
 
                 },
                 {
-                    operatorObserver.value="zip Operator onError ${it!!.message}"
+                    operatorLiveData.value="zip Operator onError ${it!!.message}"
                 },
                 {
-                    operatorObserver.value="zip Operator onComplete"
+                    operatorLiveData.value="zip Operator onComplete"
                 })
     }
 

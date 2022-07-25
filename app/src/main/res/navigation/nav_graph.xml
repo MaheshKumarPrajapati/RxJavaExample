@@ -19,6 +19,9 @@
          <action
             android:id="@+id/go_main_fragment_to_operator_fragment"
             app:destination="@id/operators_fragment" />
+        <action
+            android:id="@+id/go_main_fragment_to_observer_obserable_fragment"
+            app:destination="@id/observer_obserable_fragment" />
 
     </fragment>
     <fragment
@@ -46,6 +49,12 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/observer_obserable_fragment"
+        android:name="com.mahesh_prajapati.rxjavaexamples.observar_obserabble.ObserverObserableFragment"
+        android:label="@string/observer_obserable"
+        tools:layout="@layout/fragment_observer_obserable">
+    </fragment>
     <fragment
         android:id="@+id/output_fragment"
         android:name="com.mahesh_prajapati.rxjavaexamples.OutputFragment"
